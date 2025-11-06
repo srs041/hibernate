@@ -24,10 +24,24 @@ public class HibernatedemoApplication {
 //            readStudent(studentDAO);
 //            displayStudents(studentDAO);
 //            displayLastStudents(studentDAO);
-            updateStudent(studentDAO);
+            //updateStudent(studentDAO);
+            deleteAstudent(studentDAO);
 
 
         };
+    }
+
+    private void deleteAstudent(StudentDAO studentDAO) {
+
+        int id=4;
+
+        studentDAO.deleteStudent(id);
+
+        List<Student> l1 = studentDAO.findAll();
+        for (Student fs1 : l1) {
+            System.out.println("Display ALL student after delete by id :" + fs1);
+        }
+
     }
 
     private void updateStudent(StudentDAO studentDAO) {
