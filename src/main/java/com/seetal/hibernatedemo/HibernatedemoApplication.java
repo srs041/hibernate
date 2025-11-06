@@ -20,13 +20,13 @@ public class HibernatedemoApplication {
     public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
         return runner -> {
             System.out.println(".......inside commandLineRunner.....");
-            //createStudents(studentDAO);
+            createStudents(studentDAO);
 //            readStudent(studentDAO);
 //            displayStudents(studentDAO);
 //            displayLastStudents(studentDAO);
             //updateStudent(studentDAO);
             //deleteAstudent(studentDAO);
-            deleteAllstudent(studentDAO);
+           // deleteAllstudent(studentDAO);
         };
     }
 
