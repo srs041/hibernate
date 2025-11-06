@@ -67,4 +67,11 @@ public class StudentDAOImpl implements StudentDAO {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    @Transactional
+    public int deleteAllStudent() {
+        int count=entityManager.createQuery("delete FROM Student").executeUpdate();
+        return count;
+    }
 }

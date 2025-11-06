@@ -19,16 +19,20 @@ public class HibernatedemoApplication {
     @Bean
     public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
         return runner -> {
-            System.out.println("inside commandLineRunner");
-//            createStudents(studentDAO);
+            System.out.println(".......inside commandLineRunner.....");
+            //createStudents(studentDAO);
 //            readStudent(studentDAO);
 //            displayStudents(studentDAO);
 //            displayLastStudents(studentDAO);
             //updateStudent(studentDAO);
-            deleteAstudent(studentDAO);
-
-
+            //deleteAstudent(studentDAO);
+            deleteAllstudent(studentDAO);
         };
+    }
+
+    private void deleteAllstudent(StudentDAO studentDAO) {
+        int count=studentDAO.deleteAllStudent();
+        System.out.println(count+":  no. of student data deleted");
     }
 
     private void deleteAstudent(StudentDAO studentDAO) {
