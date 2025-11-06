@@ -30,8 +30,12 @@ public class HibernatedemoApplication {
 
 		System.out.println("Creating student object");
 		Student s1=new Student("Seetal","Sahoo","ss@gmail.com");
+		Student s2=new Student("Bonita","Appleubom","ba@gmail.com");
+		Student s3=new Student("John","Deo","jd@gmail.com");
 		System.out.println("Saving student object");
 		studentDAO.save(s1);
+		studentDAO.save(s2);
+		studentDAO.save(s3);
 
 		System.out.println("Student generated ID :"+s1.getId());
 
