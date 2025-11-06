@@ -20,11 +20,23 @@ public class HibernatedemoApplication {
     public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
         return runner -> {
             System.out.println("inside commandLineRunner");
-            createStudents(studentDAO);
-            readStudent(studentDAO);
-            displayStudents(studentDAO);
-            displayLastStudents(studentDAO);
+//            createStudents(studentDAO);
+//            readStudent(studentDAO);
+//            displayStudents(studentDAO);
+//            displayLastStudents(studentDAO);
+            updateStudent(studentDAO);
+
+
         };
+    }
+
+    private void updateStudent(StudentDAO studentDAO) {
+//retrive the student by id
+        Student rs1=studentDAO.findById(1);
+        System.out.println("Initial student info "+rs1);
+        rs1.setFirstname("Scobby");
+        studentDAO.updateStudent(rs1);
+        System.out.println("Final student info "+rs1);
     }
 
     private void displayLastStudents(StudentDAO studentDAO) {
